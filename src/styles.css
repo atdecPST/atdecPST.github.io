@@ -1,0 +1,402 @@
+:root {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.4;
+  color: #152334;
+  background: linear-gradient(180deg, #f3f7fb 0%, #f7fafc 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+#root {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.page-wrap {
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+}
+
+.app-header h1 {
+  margin: 0.35rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.header-tools {
+  margin-right: 14px;
+  font-weight: 700;
+  color: #224462;
+  font-size: 2rem;
+}
+
+.atdec-logo {
+  height: 76px;
+  width: auto;
+  margin-right: 14px;
+  display: block;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(340px, 430px) 1fr;
+  gap: 1rem;
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #d8e1ea;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+}
+
+.warning-message {
+  margin: 0;
+  color: #8b2c2c;
+  font-size: 0.92rem;
+}
+
+.warning-message span {
+  display: block;
+}
+
+.input-error {
+  margin: 0 0 0.6rem;
+  color: #992620;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.12rem;
+}
+
+h3 {
+  margin: 0.7rem 0 0.45rem;
+  font-size: 0.98rem;
+  color: #324a63;
+}
+
+.preset-section {
+  margin-top: 1rem;
+}
+
+.preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.preset-btn {
+  border: 1px solid #4c6986;
+  background: #eef4fa;
+  color: #163a5a;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.preset-btn span:first-child {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.05;
+}
+
+.preset-btn span:not(:first-child) {
+  font-weight: 400;
+  font-size: 0.93rem;
+}
+
+.manual-grid,
+.array-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.array-section {
+  margin-top: 1rem;
+}
+
+.orientation-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.orientation-btn {
+  border: 1px solid #7f93a8;
+  background: #f4f7fb;
+  color: #1b3650;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 92px;
+  width: 100%;
+}
+
+.orientation-btn.selected {
+  border-color: #145ea8;
+  background: #dfefff;
+}
+
+.orientation-icon {
+  display: inline-block;
+  border: 2px solid #2d4b68;
+  border-radius: 2px;
+}
+
+.orientation-icon.landscape {
+  width: 40px;
+  height: 24px;
+}
+
+.orientation-icon.portrait {
+  width: 24px;
+  height: 40px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.93rem;
+  gap: 0.3rem;
+}
+
+input,
+select {
+  border: 1px solid #bdccdb;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.output-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+button {
+  border: 1px solid #145ea8;
+  background: #1a73c7;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #1664ac;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.summary-grid div {
+  border: 1px solid #d8e1ea;
+  border-radius: 10px;
+  padding: 0.6rem;
+  background: #fafcfe;
+}
+
+.summary-grid span {
+  display: block;
+  color: #4f6074;
+  font-size: 0.88rem;
+}
+
+.bom-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #d8e1ea;
+}
+
+.bom-table th,
+.bom-table td {
+  border: 1px solid #d8e1ea;
+  padding: 0.52rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.bom-table th {
+  background: #f0f5fa;
+  white-space: nowrap;
+}
+
+.bom-col-narrow {
+  width: 150px;
+}
+
+.buy-link-wrap {
+  text-decoration: none;
+}
+
+.buy-link {
+  display: inline-block;
+  border: 1px solid #145ea8;
+  background: #1a73c7;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.buy-link:hover {
+  background: #1664ac;
+}
+
+.error-block {
+  border: 1px solid #e0b4b4;
+  background: #fff6f6;
+  border-radius: 10px;
+  padding: 0.9rem;
+}
+
+.error-block h2 {
+  color: #992620;
+}
+
+.schematic {
+  width: 100%;
+  border: 1px solid #d8e1ea;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.display-rect {
+  fill: #e6f1fb;
+  stroke: #2c5f8f;
+  stroke-width: 1.2;
+}
+
+.display-label {
+  fill: #173550;
+  font-size: 10px;
+}
+
+.vesa-rect {
+  fill: none;
+  stroke: #6f7f92;
+  stroke-width: 1;
+  stroke-dasharray: 4 2;
+}
+
+.vesa-hole {
+  fill: #1c2d3f;
+}
+
+.rail-label {
+  fill: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.bracket-rect {
+  fill: #d9d9d9;
+  stroke: #6a6a6a;
+  stroke-width: 0.9;
+}
+
+.legend {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border: 1px solid #d8e1ea;
+  border-radius: 10px;
+  padding: 0.7rem;
+  background: #fafcfe;
+}
+
+.legend h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.legend ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.4rem;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+}
+
+.legend-chip {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #2b3a48;
+}
+
+@media (max-width: 980px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header h1 {
+    font-size: 1.15rem;
+  }
+
+  .preset-grid,
+  .manual-grid,
+  .array-grid,
+  .orientation-buttons {
+    grid-template-columns: 1fr;
+  }
+}
